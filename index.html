@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Áxis — Veja a cadeia. Trate a causa.</title>
+<meta name="description" content="Prontuário, agenda e o editor de cadeias lesionais em 2D e 3D para clínicas de osteopatia e terapias integrativas — com assistente de IA, lembretes por WhatsApp e interface em português e inglês."/>
+<meta property="og:title" content="Áxis — Veja a cadeia. Trate a causa."/>
+<meta property="og:description" content="Prontuário, agenda e o editor de cadeias lesionais em 2D e 3D para clínicas de osteopatia e terapias integrativas — com assistente de IA, lembretes por WhatsApp e interface em português e inglês."/>
+<meta property="og:image" content="assets/hero.jpg"/>
+<link rel="icon" href="assets/logo.svg"/>
+<link rel="stylesheet" href="site.css"/>
+<style>
+  :root {
+    --bg: #07100d; --accent: #10b981; --text: #eef5f1;
+    --serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "Helvetica Neue", Arial, sans-serif;
+  }
+</style>
+</head>
+<body id="top">
+  <div id="veil"><div class="mark">Áxis</div><div class="bar"><i></i></div></div>
+
+  <canvas id="scene"></canvas>
+  <div id="hero-photo"><img src="assets/hero.jpg" alt="Osteopata na sua sala mostra ao paciente, no iPad, a cadeia lesional acesa no esqueleto 3D do Áxis — a mesma tela no monitor da parede"/></div>
+  <div id="section-photos"><div class="section-photo video cover fit-cover align-left" data-for="chain-editor"><canvas></canvas></div><div class="section-photo video panel fit-contain align-right" data-for="viewer-3d"><canvas></canvas></div><div class="section-photo video cover fit-cover align-left" data-for="mcp"><canvas></canvas></div><div class="section-photo video cover fit-cover align-right" data-for="languages"><canvas></canvas></div><div class="section-photo cover align-right" data-for="icp-brasil"><img src="assets/sections/icp-brasil.jpg" alt="Celular sobre a mesa mostrando um cadeado e a confirmação &quot;Secured&quot;" loading="lazy" style="--pos:50% 50%;--pos-m:16% 50%"/></div><div class="section-photo video cover fit-cover align-left" data-for="devices"><canvas></canvas></div><div class="section-photo video cover fit-cover align-center" data-for="cta"><canvas></canvas></div></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <header class="topbar has-logo">
+    <a class="brand" href="#top"><img class="logo" src="assets/logo.svg" alt=""/><span>Áxis</span></a>
+    <a class="applink" href="https://axis-staging-five.vercel.app/login">Entrar</a>
+  </header>
+  
+
+  <main>
+    <section class="chapter hero has-photo" data-align="left" data-id="hero">
+      <div class="chapter-inner">
+        <div class="kicker">ÁXIS · SOFTWARE PARA OSTEOPATIA</div>
+        <h1>Veja a cadeia. Trate a causa.</h1>
+        <div class="hero-sub">Prontuário, agenda e o editor de cadeias lesionais em 2D e 3D para clínicas de osteopatia e terapias integrativas — com assistente de IA, lembretes por WhatsApp e interface em português e inglês.</div>
+        <div class="hero-actions"><a class="btn primary" href="https://axis-staging-five.vercel.app/register?next=%2Fclinics%2Fnew">Criar conta</a><a class="btn ghost" href="https://axis-staging-five.vercel.app/login">Já tenho conta</a></div>
+      </div>
+    </section>
+    <section class="chapter" data-align="left" data-id="chain-editor">
+      <div class="chapter-inner">
+        <div class="kicker">EDITOR DE CADEIAS LESIONAIS</div>
+        <h2>Desenhe o raciocínio clínico, não só o registro.</h2>
+        <p class="lead">Estruturas, disfunções e relações num mapa 2D construído sobre um catálogo osteopático de mais de 220 estruturas. O tipo da cadeia emerge do desenho. Cada versão fica guardada por paciente, com comparação antes/depois e PDF pronto para entregar.</p>
+        <ul class="points"><li>Catálogo de estruturas, disfunções e testes por região</li><li>Rascunho → final, com versionamento por paciente</li><li>Comparação antes/depois e exportação em PDF</li></ul>
+      </div>
+    </section>
+    <section class="chapter" data-align="right" data-id="viewer-3d">
+      <div class="chapter-inner">
+        <div class="kicker">VISUALIZAÇÃO 3D</div>
+        <h2>A mesma cadeia, no corpo inteiro.</h2>
+        <p class="lead">Cada estrutura da cadeia acende num modelo anatômico 3D — esqueleto completo, osso a osso, e vísceras — com a gravidade em cor e os cards de histórico e sintomas ligados à estrutura. Gire, aproxime, entre em tela cheia: no consultório e na frente do paciente.</p>
+        <ul class="points"><li>Esqueleto completo e vísceras, mapeados ao catálogo clínico</li><li>Gravidade em cor e ligações desenhadas no espaço</li><li>Tela cheia, navegação por toque e controles de zoom no celular</li></ul>
+      </div>
+    </section>
+    <section class="chapter" data-align="left" data-id="ai">
+      <div class="chapter-inner">
+        <div class="kicker">ASSISTENTE DE IA</div>
+        <h2>A IA sugere. Quem decide é você.</h2>
+        <p class="lead">Rascunho de evolução SOAP a partir do atendimento, extração de valores de exames em PDF, documentos e mensagens ao paciente, e um assistente que responde sobre a agenda e o prontuário. Tudo rotulado como IA, tudo auditado — e nada assinado em seu nome.</p>
+        <ul class="points"><li>Provedor e modelo escolhidos por clínica, com níveis de custo</li><li>Nome e documentos do paciente removidos dos exames antes do envio ao provedor</li><li>Consentimento do paciente para uso de IA registrado no prontuário</li></ul>
+      </div>
+    </section>
+    <section class="chapter" data-align="left" data-id="mcp">
+      <div class="chapter-inner">
+        <div class="kicker">MCP · CLAUDE E CHATGPT</div>
+        <h2>Converse com a clínica, por texto ou por voz.</h2>
+        <p class="lead">Conecte o Áxis ao Claude ou ao ChatGPT e resolva conversando — digitando ou falando, no celular ou no computador. A conexão entra pela mesma porta do app: valem os mesmos papéis e permissões, cada chamada fica registrada na auditoria e dados clínicos só cruzam a conexão se o administrador da clínica autorizar.</p>
+        <ul class="points"><li>Paciente: próximas consultas, comprovante de atendimento, pedido de cancelamento</li><li>Secretária: agenda do dia, novo agendamento, cadastro de paciente</li><li>Profissional: sua agenda, seus pacientes, uma avaliação aberta em rascunho</li></ul>
+      </div>
+    </section>
+    <section class="chapter" data-align="left" data-id="whatsapp">
+      <div class="chapter-inner">
+        <div class="kicker">WHATSAPP</div>
+        <h2>Lembretes que voltam confirmados.</h2>
+        <p class="lead">Lembretes automáticos pelo número da própria clínica, na API oficial do WhatsApp. O paciente toca em Confirmar e a consulta fica confirmada; Cancelar e Remarcar viram pedidos que a recepção decide — sem ninguém ao telefone.</p>
+        <ul class="points"><li>Número da clínica na API oficial da Meta, sem gateways não oficiais</li><li>Confirmação por um toque; recibos de entrega e leitura</li><li>Opt-out do paciente respeitado automaticamente</li></ul>
+      </div>
+    </section>
+    <section class="chapter" data-align="right" data-id="languages">
+      <div class="chapter-inner">
+        <div class="kicker">PORTUGUÊS E INGLÊS</div>
+        <h2>Dois idiomas, um vocabulário clínico.</h2>
+        <p class="lead">Interface completa em português e inglês, escolhida por cada profissional. O vocabulário osteopático — estruturas, disfunções, relações e testes — é traduzido termo a termo, até no PDF que o paciente leva para casa.</p>
+        <ul class="points"><li>Preferência de idioma por usuário, não por clínica</li><li>Papéis, catálogo e relatórios traduzidos com paridade verificada</li></ul>
+      </div>
+    </section>
+    <section class="chapter" data-align="left" data-id="finance">
+      <div class="chapter-inner">
+        <div class="kicker">FINANCEIRO</div>
+        <h2>Do atendimento ao caixa, sem planilha.</h2>
+        <p class="lead">Cobre por sessão, pacote ou mensalidade — Pix que se confirma sozinho, cartão parcelado, boleto ou link de pagamento. O pacote só é descontado quando o paciente é atendido: falta não consome sessão. No fim do mês, o repasse de cada profissional já vem calculado, com as taxas da maquininha descontadas, e a nota fiscal sai do próprio Áxis.</p>
+        <ul class="points"><li>Pacotes e mensalidades de pilates, com reposição, trancamento e lembrete pelo WhatsApp</li><li>Repasse por profissional e serviço — e cada profissional vê só o próprio extrato</li><li>NFS-e, conciliação bancária, fluxo de caixa, DRE e exportação para a contabilidade</li></ul>
+      </div>
+    </section>
+    <section class="chapter" data-align="right" data-id="icp-brasil">
+      <div class="chapter-inner">
+        <div class="kicker">CERTIFICADO DIGITAL ICP-BRASIL</div>
+        <h2>Assine com certificado digital. Qualquer um confere.</h2>
+        <p class="lead">Conecte o seu e-CPF em nuvem ou o seu certificado A1 — o arquivo e a senha nunca saem do seu aparelho — e assine evoluções, documentos e atestados no padrão da ICP-Brasil. Cada documento assinado leva um código e um QR que qualquer pessoa confere numa página pública, sem acesso ao prontuário.</p>
+        <ul class="points"><li>Assinaturas CAdES e PAdES com a política oficial do ITI, aprovadas no validador do ITI</li><li>O Áxis nunca guarda a chave de um profissional; o e-CNPJ da clínica fica cifrado</li><li>Situação do certificado registrada no momento da assinatura, e pacote de evidências para quem precisar provar</li></ul>
+      </div>
+    </section>
+    <section class="chapter" data-align="left" data-id="devices">
+      <div class="chapter-inner">
+        <div class="kicker">DESKTOP · TABLET · CELULAR</div>
+        <h2>Do consultório à maca, sem trocar de tela.</h2>
+        <p class="lead">Um único app web que se adapta: barra lateral no desktop, colunas no iPad, barra de abas e painéis deslizantes no celular. A ficha de avaliação salva sozinha enquanto você examina — sem botão de salvar.</p>
+        <ul class="points"><li>Editor de cadeias e visualizador 3D em tela cheia no tablet</li><li>Agenda por dia, semana e mês em qualquer largura</li><li>Fotos do paciente e da equipe direto da câmera do celular</li></ul>
+      </div>
+    </section>
+    <section class="chapter" data-align="left" data-id="specs">
+      <div class="chapter-inner">
+        <div class="kicker">Em números</div>
+        <div class="specs">
+          <div class="spec"><div class="k">ESTRUTURAS NO 3D</div><div class="v">220+</div></div>
+          <div class="spec"><div class="k">IDIOMAS</div><div class="v">PT · EN</div></div>
+          <div class="spec"><div class="k">ESPECIALIDADES</div><div class="v">Osteopatia · Fisio · Pilates · Nutrição</div></div>
+          <div class="spec"><div class="k">AUDITORIA LGPD</div><div class="v">cada leitura</div></div>
+        </div>
+      </div>
+    </section>
+    <section class="chapter cta" data-align="center" data-id="cta">
+      <div class="chapter-inner">
+        <h2>Comece pela sua próxima avaliação.</h2>
+        <p class="lead">Crie a clínica, convide a equipe e desenhe a primeira cadeia hoje.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="https://axis-staging-five.vercel.app/register?next=%2Fclinics%2Fnew">Criar conta</a>
+          <a class="btn ghost" href="https://axis-staging-five.vercel.app/login">Já tenho conta</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <span>© 2026 Áxis · Software para clínicas de osteopatia e terapias integrativas</span>
+    <nav><a href="https://axis-staging-five.vercel.app/login">Entrar</a><a href="https://axis-staging-five.vercel.app/register?next=%2Fclinics%2Fnew">Criar conta</a></nav>
+  </footer>
+
+  <div class="scrollcue">role ↓</div>
+
+  <nav class="section-nav" aria-label="Seções">
+    <button type="button" class="sn-prev" aria-label="Seção anterior" title="Seção anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
+    <button type="button" class="sn-next" aria-label="Próxima seção" title="Próxima seção"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+  </nav>
+
+  <script>window.__STORY__ = {"brand":"Áxis","slug":"axis","tagline":"Veja a cadeia. Trate a causa.","subtitle":"Prontuário, agenda e o editor de cadeias lesionais em 2D e 3D para clínicas de osteopatia e terapias integrativas — com assistente de IA, lembretes por WhatsApp e interface em português e inglês.","archetype":"assemble","subject":"chain","templateId":"08","accent":"#10b981","bg":"#07100d","text":"#eef5f1","camera":{"path":"dolly","axis":"z","lookAhead":0.03,"span":120,"radius":0},"waypoints":[{"id":"hero","index":0,"p":0,"pos":[0,0,0],"fog":"#0f2a22","particle":{"color":"#f8fbf9","count":1500,"style":"assemble"},"subject":"chain","light":{"flood":false,"vents":false,"rim":false}},{"id":"chain-editor","index":1,"p":0.1111111111111111,"pos":[2.7361611466053497,1.9283628290596178,-13.333333333333332],"fog":"#0b2420","particle":{"color":"#def4ec","count":1422,"style":"assemble"},"subject":null,"light":{"flood":false,"vents":false,"rim":false}},{"id":"viewer-3d","index":2,"p":0.2222222222222222,"pos":[5.142300877492314,2.954423259036624,-26.666666666666664],"fog":"#0a1f2b","particle":{"color":"#c4ecde","count":1344,"style":"assemble"},"subject":null,"light":{"flood":false,"vents":false,"rim":false}},{"id":"ai","index":3,"p":0.3333333333333333,"pos":[6.928203230275509,2.598076211353316,-40],"fog":"#141433","particle":{"color":"#abe5d1","count":1267,"style":"assemble"},"subject":null,"light":{"flood":false,"vents":false,"rim":false}},{"id":"mcp","index":4,"p":0.4444444444444444,"pos":[7.878462024097664,1.0260604299770066,-53.33333333333333],"fog":"#101d3a","particle":{"color":"#91dec4","count":1189,"style":"assemble"},"subject":null,"light":{"flood":false,"vents":false,"rim":false}},{"id":"whatsapp","index":5,"p":0.5555555555555556,"pos":[7.878462024097664,-1.026060429977006,-66.66666666666667],"fog":"#0a2618","particle":{"color":"#77d6b6","count":1111,"style":"assemble"},"subject":null,"light":{"flood":false,"vents":false,"rim":false}},{"id":"languages","index":6,"p":0.6666666666666666,"pos":[6.92820323027551,-2.5980762113533156,-80],"fog":"#0d1a24","particle":{"color":"#5dcfa9","count":1033,"style":"assemble"},"subject":null,"light":{"flood":false,"vents":false,"rim":false}},{"id":"finance","index":7,"p":0.7777777777777778,"pos":[5.142300877492316,-2.9544232590366244,-93.33333333333333],"fog":"#0e2116","particle":{"color":"#44c89c","count":956,"style":"assemble"},"subject":null,"light":{"flood":false,"vents":false,"rim":false}},{"id":"icp-brasil","index":8,"p":0.8888888888888888,"pos":[2.736161146605351,-1.9283628290596186,-106.66666666666666],"fog":"#0c1f1a","particle":{"color":"#2ac08e","count":878,"style":"assemble"},"subject":null,"light":{"flood":false,"vents":false,"rim":false}},{"id":"devices","index":9,"p":1,"pos":[9.797174393178826e-16,-7.347880794884119e-16,-120],"fog":"#0b1512","particle":{"color":"#10b981","count":800,"style":"assemble"},"subject":null,"light":{"flood":false,"vents":false,"rim":false}}],"hud":null,"sections":[{"id":"hero","zone":"","kicker":"ÁXIS · SOFTWARE PARA OSTEOPATIA","title":"Veja a cadeia. Trate a causa.","body":"","points":[],"imageAlt":"","imagePosition":"50% 50%","imagePositionMobile":null,"imageLayout":"cover","align":null,"carry":null,"hudValue":null,"start":0,"image":null,"video":null},{"id":"chain-editor","zone":"","kicker":"EDITOR DE CADEIAS LESIONAIS","title":"Desenhe o raciocínio clínico, não só o registro.","body":"Estruturas, disfunções e relações num mapa 2D construído sobre um catálogo osteopático de mais de 220 estruturas. O tipo da cadeia emerge do desenho. Cada versão fica guardada por paciente, com comparação antes/depois e PDF pronto para entregar.","points":["Catálogo de estruturas, disfunções e testes por região","Rascunho → final, com versionamento por paciente","Comparação antes/depois e exportação em PDF"],"imageAlt":"Osteopata na sua sala, com o editor de cadeias lesionais do Áxis aberto no monitor","imagePosition":"12% 50%","imagePositionMobile":"46% 50%","imageLayout":"cover","align":null,"carry":"photo→3D scene (hero photo dissolves into the chain)","hudValue":null,"start":0.1111111111111111,"image":null,"video":{"dir":"assets/sections/chain-editor","count":50,"pad":4,"ext":"jpg","w":1280,"h":720,"fit":"cover","fitM":null,"layout":"cover","span":1,"pos":"12% 50%","posM":"45% 50%","poster":null}},{"id":"viewer-3d","zone":"","kicker":"VISUALIZAÇÃO 3D","title":"A mesma cadeia, no corpo inteiro.","body":"Cada estrutura da cadeia acende num modelo anatômico 3D — esqueleto completo, osso a osso, e vísceras — com a gravidade em cor e os cards de histórico e sintomas ligados à estrutura. Gire, aproxime, entre em tela cheia: no consultório e na frente do paciente.","points":["Esqueleto completo e vísceras, mapeados ao catálogo clínico","Gravidade em cor e ligações desenhadas no espaço","Tela cheia, navegação por toque e controles de zoom no celular"],"imageAlt":"Gravação do visualizador 3D do Áxis girando o esqueleto com a cadeia acesa","imagePosition":"50% 50%","imagePositionMobile":null,"imageLayout":"cover","align":null,"carry":"2D map → the same chain lit on the 3D body","hudValue":null,"start":0.2222222222222222,"image":null,"video":{"dir":"assets/sections/viewer-3d","count":40,"pad":4,"ext":"jpg","w":1000,"h":1334,"fit":"contain","fitM":"cover","layout":"panel","span":1,"pos":"50% 50%","posM":"50% 50%","poster":null}},{"id":"ai","zone":"","kicker":"ASSISTENTE DE IA","title":"A IA sugere. Quem decide é você.","body":"Rascunho de evolução SOAP a partir do atendimento, extração de valores de exames em PDF, documentos e mensagens ao paciente, e um assistente que responde sobre a agenda e o prontuário. Tudo rotulado como IA, tudo auditado — e nada assinado em seu nome.","points":["Provedor e modelo escolhidos por clínica, com níveis de custo","Nome e documentos do paciente removidos dos exames antes do envio ao provedor","Consentimento do paciente para uso de IA registrado no prontuário"],"imageAlt":"","imagePosition":"50% 50%","imagePositionMobile":null,"imageLayout":"cover","align":null,"carry":"anatomy → the assistant reads the same record","hudValue":null,"start":0.3333333333333333,"image":null,"video":null},{"id":"mcp","zone":"","kicker":"MCP · CLAUDE E CHATGPT","title":"Converse com a clínica, por texto ou por voz.","body":"Conecte o Áxis ao Claude ou ao ChatGPT e resolva conversando — digitando ou falando, no celular ou no computador. A conexão entra pela mesma porta do app: valem os mesmos papéis e permissões, cada chamada fica registrada na auditoria e dados clínicos só cruzam a conexão se o administrador da clínica autorizar.","points":["Paciente: próximas consultas, comprovante de atendimento, pedido de cancelamento","Secretária: agenda do dia, novo agendamento, cadastro de paciente","Profissional: sua agenda, seus pacientes, uma avaliação aberta em rascunho"],"imageAlt":"Profissional de jaleco ao volante pede ao assistente do Áxis, por voz, um relatório de evolução; o pedido aparece num balão acima do celular preso ao suporte","imagePosition":"50% 50%","imagePositionMobile":"74% 50%","imageLayout":"cover","align":"left","carry":"the in-app assistant → the same clinic answering inside the person's own LLM","hudValue":null,"start":0.4444444444444444,"image":null,"video":{"dir":"assets/sections/mcp","count":60,"pad":4,"ext":"jpg","w":1100,"h":618,"fit":"cover","fitM":null,"layout":"cover","span":1,"pos":"50% 50%","posM":"66% 50%","poster":null}},{"id":"whatsapp","zone":"","kicker":"WHATSAPP","title":"Lembretes que voltam confirmados.","body":"Lembretes automáticos pelo número da própria clínica, na API oficial do WhatsApp. O paciente toca em Confirmar e a consulta fica confirmada; Cancelar e Remarcar viram pedidos que a recepção decide — sem ninguém ao telefone.","points":["Número da clínica na API oficial da Meta, sem gateways não oficiais","Confirmação por um toque; recibos de entrega e leitura","Opt-out do paciente respeitado automaticamente"],"imageAlt":"","imagePosition":"50% 50%","imagePositionMobile":null,"imageLayout":"cover","align":null,"carry":"assistant → the patient's phone","hudValue":null,"start":0.5555555555555556,"image":null,"video":null},{"id":"languages","zone":"","kicker":"PORTUGUÊS E INGLÊS","title":"Dois idiomas, um vocabulário clínico.","body":"Interface completa em português e inglês, escolhida por cada profissional. O vocabulário osteopático — estruturas, disfunções, relações e testes — é traduzido termo a termo, até no PDF que o paciente leva para casa.","points":["Preferência de idioma por usuário, não por clínica","Papéis, catálogo e relatórios traduzidos com paridade verificada"],"imageAlt":"Profissional mostra a uma paciente, no celular, a agenda do Áxis em inglês","imagePosition":"52% 50%","imagePositionMobile":"48% 50%","imageLayout":"cover","align":null,"carry":"phone → the same product in another language","hudValue":null,"start":0.6666666666666666,"image":null,"video":{"dir":"assets/sections/languages","count":33,"pad":4,"ext":"jpg","w":1100,"h":618,"fit":"cover","fitM":null,"layout":"cover","span":1,"pos":"52% 50%","posM":"44% 50%","poster":null}},{"id":"finance","zone":"","kicker":"FINANCEIRO","title":"Do atendimento ao caixa, sem planilha.","body":"Cobre por sessão, pacote ou mensalidade — Pix que se confirma sozinho, cartão parcelado, boleto ou link de pagamento. O pacote só é descontado quando o paciente é atendido: falta não consome sessão. No fim do mês, o repasse de cada profissional já vem calculado, com as taxas da maquininha descontadas, e a nota fiscal sai do próprio Áxis.","points":["Pacotes e mensalidades de pilates, com reposição, trancamento e lembrete pelo WhatsApp","Repasse por profissional e serviço — e cada profissional vê só o próprio extrato","NFS-e, conciliação bancária, fluxo de caixa, DRE e exportação para a contabilidade"],"imageAlt":"","imagePosition":"50% 50%","imagePositionMobile":null,"imageLayout":"cover","align":null,"carry":"two languages → the clinic's money, in the same record","hudValue":null,"start":0.7777777777777778,"image":null,"video":null},{"id":"icp-brasil","zone":"","kicker":"CERTIFICADO DIGITAL ICP-BRASIL","title":"Assine com certificado digital. Qualquer um confere.","body":"Conecte o seu e-CPF em nuvem ou o seu certificado A1 — o arquivo e a senha nunca saem do seu aparelho — e assine evoluções, documentos e atestados no padrão da ICP-Brasil. Cada documento assinado leva um código e um QR que qualquer pessoa confere numa página pública, sem acesso ao prontuário.","points":["Assinaturas CAdES e PAdES com a política oficial do ITI, aprovadas no validador do ITI","O Áxis nunca guarda a chave de um profissional; o e-CNPJ da clínica fica cifrado","Situação do certificado registrada no momento da assinatura, e pacote de evidências para quem precisar provar"],"imageAlt":"Celular sobre a mesa mostrando um cadeado e a confirmação \"Secured\"","imagePosition":"50% 50%","imagePositionMobile":"16% 50%","imageLayout":"cover","align":"right","carry":"two languages → one legal signature, verifiable by anyone","hudValue":null,"start":0.8888888888888888,"image":"assets/sections/icp-brasil.jpg","video":null},{"id":"devices","zone":"","kicker":"DESKTOP · TABLET · CELULAR","title":"Do consultório à maca, sem trocar de tela.","body":"Um único app web que se adapta: barra lateral no desktop, colunas no iPad, barra de abas e painéis deslizantes no celular. A ficha de avaliação salva sozinha enquanto você examina — sem botão de salvar.","points":["Editor de cadeias e visualizador 3D em tela cheia no tablet","Agenda por dia, semana e mês em qualquer largura","Fotos do paciente e da equipe direto da câmera do celular"],"imageAlt":"Notebook, celular e iPad lado a lado, os três mostrando a mesma cadeia lesional no visualizador 3D do Áxis","imagePosition":"50% 50%","imagePositionMobile":"74% 50%","imageLayout":"cover","align":"left","carry":"language → the device in hand","hudValue":null,"start":1,"image":null,"video":{"dir":"assets/sections/devices","count":80,"pad":4,"ext":"jpg","w":1100,"h":618,"fit":"cover","fitM":null,"layout":"cover","span":1,"pos":"50% 50%","posM":"74% 50%","poster":null}}],"continuityMap":[{"from":"hero","to":"chain-editor","carry":"shared camera path + color-grade cross-fade","camera":"spline segment 0→1","transition":"continuous camera + fog lerp (no cut)","fogFrom":"#0f2a22","fogTo":"#0b2420"},{"from":"chain-editor","to":"viewer-3d","carry":"shared camera path + color-grade cross-fade","camera":"spline segment 1→2","transition":"continuous camera + fog lerp (no cut)","fogFrom":"#0b2420","fogTo":"#0a1f2b"},{"from":"viewer-3d","to":"ai","carry":"shared camera path + color-grade cross-fade","camera":"spline segment 2→3","transition":"continuous camera + fog lerp (no cut)","fogFrom":"#0a1f2b","fogTo":"#141433"},{"from":"ai","to":"mcp","carry":"shared camera path + color-grade cross-fade","camera":"spline segment 3→4","transition":"continuous camera + fog lerp (no cut)","fogFrom":"#141433","fogTo":"#101d3a"},{"from":"mcp","to":"whatsapp","carry":"shared camera path + color-grade cross-fade","camera":"spline segment 4→5","transition":"continuous camera + fog lerp (no cut)","fogFrom":"#101d3a","fogTo":"#0a2618"},{"from":"whatsapp","to":"languages","carry":"shared camera path + color-grade cross-fade","camera":"spline segment 5→6","transition":"continuous camera + fog lerp (no cut)","fogFrom":"#0a2618","fogTo":"#0d1a24"},{"from":"languages","to":"finance","carry":"shared camera path + color-grade cross-fade","camera":"spline segment 6→7","transition":"continuous camera + fog lerp (no cut)","fogFrom":"#0d1a24","fogTo":"#0e2116"},{"from":"finance","to":"icp-brasil","carry":"shared camera path + color-grade cross-fade","camera":"spline segment 7→8","transition":"continuous camera + fog lerp (no cut)","fogFrom":"#0e2116","fogTo":"#0c1f1a"},{"from":"icp-brasil","to":"devices","carry":"shared camera path + color-grade cross-fade","camera":"spline segment 8→9","transition":"continuous camera + fog lerp (no cut)","fogFrom":"#0c1f1a","fogTo":"#0b1512"}],"specs":[["ESTRUTURAS NO 3D","220+"],["IDIOMAS","PT · EN"],["ESPECIALIDADES","Osteopatia · Fisio · Pilates · Nutrição"],["AUDITORIA LGPD","cada leitura"]],"cta":{"headline":"Comece pela sua próxima avaliação.","body":"Crie a clínica, convide a equipe e desenhe a primeira cadeia hoje.","button":"Criar conta","href":"https://axis-staging-five.vercel.app/register?next=%2Fclinics%2Fnew","secondary":{"label":"Já tenho conta","href":"https://axis-staging-five.vercel.app/login"},"imageAlt":"Profissional sorrindo num café, com o celular na mesa mostrando uma cadeia lesional no Áxis","imagePosition":"50% 50%","imagePositionMobile":"46% 50%","image":null,"video":{"dir":"assets/sections/cta","count":26,"pad":4,"ext":"jpg","w":1280,"h":720,"fit":"cover","fitM":null,"layout":"cover","span":1,"pos":"50% 50%","posM":"46% 50%","poster":null}},"lang":"pt-BR","ui":{"scroll":"role ↓","specification":"Em números","sectionNav":"Seções","prevSection":"Seção anterior","nextSection":"Próxima seção","navPace":2},"shots":[{"id":"hero-image","kind":"image","prompt":"thousands of glowing data particles assembling into a floating dashboard UI — clean studio product photography, seamless dark backdrop, single soft key light, accurate materials, crisp edge highlights of #10b981, photorealistic, no text, no watermark","referenceHero":false},{"id":"chain","kind":"clip","prompt":"glowing emerald nodes and links assembling into a lesional chain drawn over a translucent human spine, dark clinical void — clean studio product photography, seamless dark backdrop, single soft key light, accurate materials, crisp edge highlights of #10b981, photorealistic, no text, no watermark","referenceHero":true,"startFrame":null,"endFrame":null},{"id":"body","kind":"clip","prompt":"slow orbit around a translucent 3D human skeleton with a few vertebrae and organs lit amber and red, holographic, dark studio — clean studio product photography, seamless dark backdrop, single soft key light, accurate materials, crisp edge highlights of #10b981, photorealistic, no text, no watermark","referenceHero":true,"startFrame":null,"endFrame":null},{"id":"device","kind":"clip","prompt":"an iPad on a treatment table showing an anatomy app, warm wood-panelled osteopathy clinic, soft daylight — clean studio product photography, seamless dark backdrop, single soft key light, accurate materials, crisp edge highlights of #10b981, photorealistic, no text, no watermark","referenceHero":true,"startFrame":null,"endFrame":null}],"generation":{"provider":"higgsfield","model":"seedance-2.0","mode":"std","resolution":"1080p","aspect":"16:9","durationSec":8,"chained":false},"heroImageAlt":"Osteopata na sua sala mostra ao paciente, no iPad, a cadeia lesional acesa no esqueleto 3D do Áxis — a mesma tela no monitor da parede","app":{"url":"https://axis-staging-five.vercel.app/login","label":"Entrar"},"topbarRight":null,"footer":{"text":"© 2026 Áxis · Software para clínicas de osteopatia e terapias integrativas","links":[["Entrar","https://axis-staging-five.vercel.app/login"],["Criar conta","https://axis-staging-five.vercel.app/register?next=%2Fclinics%2Fnew"]]},"display":"sans","engine":"webgl","logo":"assets/logo.svg","frames":{"count":48,"dir":"assets/frames","format":"svg","pattern":"frame-%03d.svg","stubbed":true},"heroImage":"assets/hero.jpg","heroPhoto":"assets/hero.jpg"};</script>
+  <script src="vendor/three.min.js"></script>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="vendor/lenis.min.js"></script>
+  <script src="engine.js"></script>
+  <script>
+    (function () {
+      var veil = document.getElementById('veil');
+      var t = setInterval(function () {
+        if (window.__ENGINE_READY__) { veil.classList.add('gone'); clearInterval(t); }
+      }, 60);
+      setTimeout(function () { veil.classList.add('gone'); }, 4000); // safety
+    })();
+  </script>
+  <script>
+    // Hero photograph → 3D world handoff: the photo is a fixed layer over the
+    // canvas; scrolling the first chapter dissolves and pushes it back, so the
+    // scene it was covering is revealed with no cut. Both engines share this.
+    (function () {
+      if (!window.gsap || !window.ScrollTrigger) return;
+      var photo = document.getElementById('hero-photo');
+      var first = document.querySelector('main .chapter');
+      if (!first) return;
+      gsap.registerPlugin(ScrollTrigger);
+      if (photo) gsap.to(photo, { opacity: 0, scale: 1.12, ease: 'none',
+        scrollTrigger: { trigger: first, start: 'top top', end: 'bottom 20%', scrub: true } });
+      var cue = document.querySelector('.scrollcue');
+      if (cue) gsap.to(cue, { autoAlpha: 0, ease: 'none', scrollTrigger: { trigger: first, start: 'top top', end: '40% top', scrub: true } });
+    })();
+  </script>
+  <script>
+    // Section photographs: each is a fixed layer that fades in as its chapter
+    // approaches the centre of the viewport and out as it leaves. Adjacent
+    // illustrated chapters therefore cross-fade; unillustrated ones show the scene.
+    (function () {
+      if (!window.gsap || !window.ScrollTrigger) return;
+      gsap.registerPlugin(ScrollTrigger);
+      document.querySelectorAll('#section-photos .section-photo:not(.video)').forEach(function (ph) {
+        var sec = document.querySelector('.chapter[data-id="' + ph.dataset.for + '"]');
+        if (!sec) return;
+        gsap.timeline({ scrollTrigger: { trigger: sec, start: ph.dataset.in || 'top 90%', end: 'bottom 10%', scrub: true } })
+          .fromTo(ph, { autoAlpha: 0, scale: 1.06 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: 'none' })
+          .to(ph, { autoAlpha: 1, duration: 0.4, ease: 'none' })
+          .to(ph, { autoAlpha: 0, scale: 1.04, duration: 0.3, ease: 'none' });
+      });
+    })();
+  </script>
+  <script>
+    // Per-section VIDEO. The take is decoded to JPEG frames at build time and the
+    // SCROLL picks the frame: it plays forward on the way down, rewinds on the way
+    // up and holds still when the reader stops. Frames stream in order and the
+    // nearest loaded one is drawn, so scrubbing works before the sequence is in.
+    (function () {
+      if (!window.gsap || !window.ScrollTrigger) return;
+      gsap.registerPlugin(ScrollTrigger);
+      var S = window.__STORY__ || {}, secs = (S.sections || []).slice();
+      // The closing CTA scrubs like a chapter; it is the page's last, so its take
+      // ends when its bottom meets the viewport's (it can never scroll to the top).
+      if (S.cta && S.cta.video) secs.push({ id: 'cta', video: S.cta.video, last: true });
+      var DPR = Math.min(window.devicePixelRatio || 1, 2);
+      var resizers = [];
+      function chapter(id) { return document.querySelector('.chapter[data-id="' + id + '"]'); }
+      function pct(t) { var f = parseFloat(t); return isNaN(f) ? 0.5 : Math.max(0, Math.min(1, f / 100)); }
+      secs.forEach(function (sec, i) {
+        var v = sec.video; if (!v) return;
+        var layer = document.querySelector('#section-photos .section-photo.video[data-for="' + sec.id + '"]');
+        var el = chapter(sec.id);
+        if (!layer || !el) return;
+        var canvas = layer.querySelector('canvas'), ctx = canvas.getContext('2d');
+        var lastEl = chapter((secs[Math.min(i + v.span - 1, secs.length - 1)] || sec).id) || el;
+        var imgs = new Array(v.count), st = new Array(v.count);
+        for (var k = 0; k < v.count; k++) st[k] = 0;
+        var cursor = 0, inflight = 0, MAX = 6, want = 0, drawn = -1, started = false;
+        function src(n) { return v.dir + '/f-' + String(n + 1).padStart(v.pad, '0') + '.' + v.ext; }
+        function pump() { while (started && inflight < MAX && cursor < v.count) { if (st[cursor]) { cursor++; continue; } load(cursor++); } }
+        function load(n) {
+          if (st[n]) return; st[n] = 1; inflight++;
+          var im = new Image();
+          im.onload = function () { st[n] = 2; imgs[n] = im; inflight--; if (n === want || drawn < 0) paint(); pump(); };
+          im.onerror = function () { st[n] = 3; inflight--; pump(); };
+          im.src = src(n);
+        }
+        function start() { if (started) return; started = true; load(0); pump(); }
+        function nearest(n) {
+          if (st[n] === 2) return n;
+          for (var d = 1; d < v.count; d++) {
+            if (n - d >= 0 && st[n - d] === 2) return n - d;
+            if (n + d < v.count && st[n + d] === 2) return n + d;
+          }
+          return -1;
+        }
+        // Destination rect. cover fills the viewport; contain draws the take whole —
+        // in the half opposite the copy on a desktop, above the copy on a phone.
+        function phone() { return window.innerWidth <= 720; }
+        function fit() { return (phone() && v.fitM) ? v.fitM : v.fit; }
+        function box() {
+          var W = canvas.width, H = canvas.height;
+          if (fit() !== 'contain') return { x: 0, y: 0, w: W, h: H };
+          if (v.layout === 'panel' && !phone()) {
+            var pw = W * 0.5, px = layer.classList.contains('align-left') ? W - pw : 0;
+            return { x: px + pw * 0.05, y: H * 0.06, w: pw * 0.9, h: H * 0.88 };
+          }
+          return { x: W * 0.04, y: H * 0.04, w: W * 0.92, h: H * 0.58 };
+        }
+        function paint() {
+          var n = nearest(want); if (n < 0) return;
+          var im = imgs[n]; if (!im || !im.naturalWidth) return;
+          var b = box(), iw = im.naturalWidth, ih = im.naturalHeight, sc, x, y;
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          if (fit() === 'contain') {
+            sc = Math.min(b.w / iw, b.h / ih);
+            x = b.x + (b.w - iw * sc) / 2; y = b.y + (b.h - ih * sc) / 2;
+          } else {
+            sc = Math.max(b.w / iw, b.h / ih);
+            var pp = String((phone() && v.posM) ? v.posM : v.pos).trim().split(/ +/);
+            x = b.x + (b.w - iw * sc) * pct(pp[0]); y = b.y + (b.h - ih * sc) * pct(pp[1]);
+          }
+          ctx.drawImage(im, x, y, iw * sc, ih * sc);
+          drawn = n;
+          layer.classList.add('ready');
+        }
+        function size() {
+          canvas.width = Math.round(window.innerWidth * DPR);
+          canvas.height = Math.round(window.innerHeight * DPR);
+          canvas.style.width = window.innerWidth + 'px';
+          canvas.style.height = window.innerHeight + 'px';
+          ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'high';
+          drawn = -1; paint();
+        }
+        size(); resizers.push(size);
+        // Frame index from scroll: this chapter's top → the moment the LAST spanned
+        // chapter is fully in view, so a travelling take ARRIVES with the copy that
+        // describes where it arrives, and holds that frame while the copy is read.
+        ScrollTrigger.create({
+          trigger: el, start: i === 0 ? 'top top' : 'top bottom',
+          endTrigger: lastEl, end: v.span > 1 ? 'top top' : (sec.last ? 'bottom bottom' : 'bottom top'),
+          onUpdate: function (self) {
+            var n = Math.round(self.progress * (v.count - 1));
+            if (n === want) return;
+            want = n;
+            if (st[n] !== 2 && inflight < MAX) load(n);
+            paint();
+          },
+        });
+        if (i === 0) {
+          start();
+          gsap.to(layer, { autoAlpha: 0, ease: 'none',
+            scrollTrigger: { trigger: lastEl, start: 'bottom 60%', end: 'bottom 15%', scrub: true } });
+        } else {
+          gsap.timeline({ scrollTrigger: { trigger: el, start: layer.dataset.in || 'top 90%', end: 'bottom 10%', scrub: true } })
+            .fromTo(layer, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.3, ease: 'none' })
+            .to(layer, { autoAlpha: 1, duration: 0.4, ease: 'none' })
+            .to(layer, { autoAlpha: 0, duration: 0.3, ease: 'none' });
+          ScrollTrigger.create({ trigger: el, start: 'top bottom+=60%', once: true, onEnter: start });
+        }
+      });
+      var rt; window.addEventListener('resize', function () {
+        clearTimeout(rt); rt = setTimeout(function () { resizers.forEach(function (f) { f(); }); }, 120);
+      });
+    })();
+  </script>
+  <script>
+    // Section buttons: an alternative to the wheel/touch scroll. Each press GLIDES
+    // (never jumps) to the previous/next chapter's top through the page's own Lenis,
+    // so the scroll-driven takes and the 3D scene play through the move as they would
+    // under a hand scroll. ↑ hides on the first chapter, ↓ on the last, and the pair
+    // steps aside while the footer is on screen so it never covers the footer links.
+    (function () {
+      var nav = document.querySelector('.section-nav'); if (!nav) return;
+      var prev = nav.querySelector('.sn-prev'), next = nav.querySelector('.sn-next');
+      var chapters = [].slice.call(document.querySelectorAll('main .chapter'));
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var SLACK = 8;
+      function tops() { return chapters.map(function (c) { return c.getBoundingClientRect().top + window.scrollY; }); }
+      function target(dir) {
+        var t = tops(), y = window.scrollY;
+        if (dir > 0) { for (var i = 0; i < t.length; i++) if (t[i] > y + SLACK) return t[i]; return null; }
+        for (var j = t.length - 1; j >= 0; j--) if (t[j] < y - SLACK) return t[j];
+        return null;
+      }
+      function glide(dir) {
+        var y = target(dir); if (y == null) return;
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+        y = Math.max(0, Math.min(max, y));
+        var dist = Math.abs(y - window.scrollY) / window.innerHeight;
+        // ~1.65 s for one screen, longer for a tall chapter, capped at 3.2 s — all of
+        // it times ui.navPace (brief, or --nav-pace), so a variant can glide slower.
+        var pace = Number((window.__STORY__ && window.__STORY__.ui && window.__STORY__.ui.navPace) || 1) || 1;
+        var duration = reduce ? 0 : Math.min(3.2, 1.3 + 0.35 * dist) * pace;
+        if (window.__lenis && !reduce) {
+          window.__lenis.scrollTo(y, { duration: duration, easing: function (t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; } });
+        } else {
+          window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
+        }
+      }
+      prev.addEventListener('click', function () { glide(-1); });
+      next.addEventListener('click', function () { glide(1); });
+      var footer = document.querySelector('.site-footer'), footerOn = false;
+      if (footer && 'IntersectionObserver' in window) {
+        new IntersectionObserver(function (es) { footerOn = es[0].isIntersecting; sync(); }).observe(footer);
+      }
+      function sync() {
+        prev.classList.toggle('off', target(-1) == null);
+        next.classList.toggle('off', target(1) == null);
+        nav.classList.toggle('away', footerOn);
+      }
+      window.addEventListener('scroll', sync, { passive: true });
+      window.addEventListener('resize', sync);
+      sync();
+    })();
+  </script>
+</body>
+</html>

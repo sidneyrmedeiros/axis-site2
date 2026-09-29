@@ -1,0 +1,17 @@
+{
+  "dir": "assets/sections/chain-editor",
+  "count": 50,
+  "pad": 4,
+  "ext": "jpg",
+  "w": 1280,
+  "h": 720,
+  "key": {
+    "src": "hero.mp4",
+    "mtimeMs": 1788728485770.5396,
+    "size": 3444953,
+    "fps": 10,
+    "width": 1280,
+    "q": 5,
+    "start": 5
+  }
+}

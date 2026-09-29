@@ -1,0 +1,17 @@
+{
+  "dir": "assets/sections/viewer-3d",
+  "count": 40,
+  "pad": 4,
+  "ext": "jpg",
+  "w": 1000,
+  "h": 1334,
+  "key": {
+    "src": "viewer-3d.mov",
+    "mtimeMs": 1788757199010.68,
+    "size": 15842159,
+    "fps": 5,
+    "width": 1000,
+    "q": 6,
+    "start": 0
+  }
+}
