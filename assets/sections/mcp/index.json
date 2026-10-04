@@ -1,0 +1,17 @@
+{
+  "dir": "assets/sections/mcp",
+  "count": 28,
+  "pad": 4,
+  "ext": "jpg",
+  "w": 1100,
+  "h": 618,
+  "key": {
+    "src": "mcp.mov",
+    "mtimeMs": 1791116437777.937,
+    "size": 2995125,
+    "fps": 6,
+    "width": 1100,
+    "q": 6,
+    "start": 0
+  }
+}

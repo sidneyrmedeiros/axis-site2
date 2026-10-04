@@ -1,0 +1,17 @@
+{
+  "dir": "assets/sections/cta",
+  "count": 26,
+  "pad": 4,
+  "ext": "jpg",
+  "w": 1280,
+  "h": 720,
+  "key": {
+    "src": "cta.mov",
+    "mtimeMs": 1790693233415.5613,
+    "size": 1091256,
+    "fps": 12,
+    "width": 1280,
+    "q": 5,
+    "start": 0
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "dir": "assets/sections/devices",
+  "count": 80,
+  "pad": 4,
+  "ext": "jpg",
+  "w": 1100,
+  "h": 618,
+  "key": {
+    "src": "devices.mp4",
+    "mtimeMs": 1790692342328.895,
+    "size": 2620404,
+    "fps": 8,
+    "width": 1100,
+    "q": 6,
+    "start": 0
+  }
+}
